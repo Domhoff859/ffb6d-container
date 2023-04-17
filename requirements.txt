@@ -1,0 +1,13 @@
+Pillow
+tqdm
+h5py
+numpy
+scipy
+Imath
+einops
+PyYaml
+OpenEXR
+argparse
+open3d
+opencv-python-headless
+opencv-contrib-python-headless
