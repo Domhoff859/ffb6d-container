@@ -1,0 +1,9 @@
+[submodule "src/FFB6D"]
+	path = src/FFB6D
+	url = https://github.com/ethnhe/FFB6D.git
+[submodule "src/apex"]
+	path = src/apex
+	url = https://github.com/NVIDIA/apex.git
+[submodule "src/normalSpeed"]
+	path = src/normalSpeed
+	url = https://github.com/hfutcgncas/normalSpeed.git
