@@ -3,6 +3,7 @@ FROM pytorch/pytorch:1.6.0-cuda10.1-cudnn7-devel
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A4B469963BF863CC ;\
     apt-get update --allow-unauthenticated && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
     build-essential \
+    cmake \
     libhdf5-100 \
     libhdf5-serial-dev \
     libhdf5-dev \
@@ -15,22 +16,26 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A4B469963BF863CC ;\
     libsm6 \
     libxext6 \
     libxrender-dev \
-    python3-tk
+    libopencv-dev \
+    python3-tk 
+    #python3-opencv
 
 # maybe we also have a requirements.txt file
 COPY ./requirements.txt /workspace/requirements.txt
 RUN pip install --upgrade cython ;\
     pip install -r requirements.txt
 
+
 COPY ./src /workspace/src
 
 RUN pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" /workspace/src/apex/setup.py ;\
-    python3 /workspace/src/normalSpeed/normalSpeed/setup.py install --user ;\
-    cd /workspace/src/ffb6d/models/RandLA/ ;\
-    sh compile_op.sh
+    cd /workspace/src/normalSpeed/normalSpeed ;\
+    python3 setup.py install --user ;\
+    cd /workspace/src/FFB6D/ffb6d/models/RandLA ;\
+    sh ./compile_op.sh
 
 
-WORKDIR /workspace/src/ffb6d/
+WORKDIR /workspace/src/FFB6D/ffb6d/
 
-ENTRYPOINT ["python"]
-CMD ["/workspace/src/ffb6d/demo.py"]
+#ENTRYPOINT ["python"]
+CMD ["python", "/workspace/src/FFB6D/ffb6d/demo.py"]
