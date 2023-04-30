@@ -38,4 +38,4 @@ RUN pip install -v --disable-pip-version-check --no-cache-dir --global-option="-
 WORKDIR /workspace/src/FFB6D/ffb6d/
 
 #ENTRYPOINT ["python"]
-CMD ["python", "/workspace/src/FFB6D/ffb6d/demo.py"]
+#CMD ["python", "/workspace/src/FFB6D/ffb6d/demo.py"]
