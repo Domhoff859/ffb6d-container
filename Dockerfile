@@ -34,8 +34,8 @@ RUN pip install -v --disable-pip-version-check --no-cache-dir --global-option="-
     cd /workspace/src/FFB6D/ffb6d/models/RandLA ;\
     sh ./compile_op.sh
 
+#RUN cd /workspace/src/FFB6D/ffb6d ;\
+#    sh ./test_lm.sh
+
 
 WORKDIR /workspace/src/FFB6D/ffb6d/
-
-#ENTRYPOINT ["python"]
-#CMD ["python", "/workspace/src/FFB6D/ffb6d/demo.py"]
