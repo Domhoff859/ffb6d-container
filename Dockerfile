@@ -17,8 +17,9 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A4B469963BF863CC ;\
     libxext6 \
     libxrender-dev \
     libopencv-dev \
-    python3-tk 
-    #python3-opencv
+    python3-tk \
+    nano \
+    vim
 
 # maybe we also have a requirements.txt file
 COPY ./requirements.txt /workspace/requirements.txt
@@ -28,14 +29,12 @@ RUN pip install --upgrade cython ;\
 
 COPY ./src /workspace/src
 
-RUN pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" /workspace/src/apex/setup.py ;\
+RUN cd /workspace/src/apex ;\
+    export TORCH_CUDA_ARCH_LIST="6.1" ;\
+    python3 setup.py install ;\
     cd /workspace/src/normalSpeed/normalSpeed ;\
     python3 setup.py install --user ;\
     cd /workspace/src/FFB6D/ffb6d/models/RandLA ;\
     sh ./compile_op.sh
-
-#RUN cd /workspace/src/FFB6D/ffb6d ;\
-#    sh ./test_lm.sh
-
 
 WORKDIR /workspace/src/FFB6D/ffb6d/
