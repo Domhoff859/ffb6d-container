@@ -14,9 +14,9 @@ To get started with the container, follow these steps:
 
 Once you have the container up and running, you can use it to run 6D pose estimation using FFB6D. Here are the basic steps:
 
-1. Navigate to the `src/FFB6D` directory.
-2. Run the `inference.py` script to perform 6D pose estimation on your data.
-3. If you want to use pretrained checkpoints, download them and add them to the `src/FFB6D/ffb6d/trainlog/linemod/checkpoints/` directory.
+1. Navigate to the `src/FFB6D/ffb6d` directory.
+2. Run the `demo.sh` script to perform 6D pose estimation on your data.
+3. If you want to use pretrained checkpoints, download them and add them to the `src/FFB6D/ffb6d/trainlog/linemod/checkpoints/XXX` directory. Where XXX is the name of the object.
 
 ## Additional Information
 
