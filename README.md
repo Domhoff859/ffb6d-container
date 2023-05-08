@@ -1,25 +1,35 @@
-# ffb6d-container
+# FFB6D Container
 
-This repository provides a docker container for running 6D pose estimation using FFB6D. The container includes the LineMOD dataset, and if you want to use pretrained checkpoints, you will need to manually download and add them to the appropriate directory.
+Welcome to the FFB6D Container repository! This repository contains a Docker container for the FFB6D tool, a program for simulating and analyzing the behavior of complex systems developed by the Center for Nonlinear Studies at Los Alamos National Laboratory.
 
-## Quickstart
+## Getting Started
 
-To get started with the container, follow these steps:
+To use this container, you'll need to have Docker installed on your system. If you don't have Docker installed, you can download it from the [Docker website](https://www.docker.com/get-started).
 
-1. Clone the repository to your local machine.
-2. Build the container using the provided Dockerfile: `docker build -t ffb6d-container .`
-3. Run the container in interactive mode: `docker run -it ffb6d-container bash`
+Once you have Docker installed, you can build the container using the following command:
 
-## Usage
+```bash
+docker build -t ffb6d-container .
+```
 
-Once you have the container up and running, you can use it to run 6D pose estimation using FFB6D. Here are the basic steps:
+This command will build the container using the Dockerfile in this repository and tag it with the name `ffb6d-container`.
 
-1. Navigate to the `src/FFB6D/ffb6d` directory.
-2. Run the `demo_lm.sh` script to perform 6D pose estimation on your data.
-3. If you want to use pretrained checkpoints for the LineMod Dataset, download them and add them to the `src/FFB6D/ffb6d/trainlog/linemod/checkpoints/XXX` directory. Where XXX is the name of the object.
+## Running the Container
 
-## Additional Information
+After building the container, you can run it using the following command:
 
-For more information on FFB6D and 6D pose estimation, please refer to the original research paper: https://arxiv.org/abs/2103.02242v1
+```bash
+docker run -it --rm ffb6d-container
+```
 
-If you have any issues with the container or would like to contribute to the project, please submit an issue or pull request on the GitHub repository.
+This command will start the container in interactive mode (`-it`) and remove the container when it's done running (`--rm`). Once the container is running, you can use FFB6D by following the instructions in the FFB6D documentation, which is available in the container at `/usr/local/ffb6d/README.txt`.
+
+## About the Container
+
+This container is based on Ubuntu 16.04 and includes all the necessary dependencies for running FFB6D. The container also includes a copy of the FFB6D source code, which is installed in `/usr/local/ffb6d`.
+
+If you have any issues with the container, please feel free to open an issue in the repository.
+
+## Conclusion
+
+Thank you for using the FFB6D Container! We hope this container makes it easy for you to use the FFB6D tool in your projects. If you have any feedback or suggestions, please feel free to let us know. Happy coding!
