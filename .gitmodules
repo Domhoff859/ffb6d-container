@@ -8,5 +8,5 @@
 [submodule "src/ClearPose"]
 	path = src/ClearPose
 	url = https://github.com/Domhoff859/ClearPose.git
-	branch = 30bc633
+	branch = he_ffb6d
 	
