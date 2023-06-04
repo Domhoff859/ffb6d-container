@@ -4,6 +4,9 @@
 [submodule "src/normalSpeed"]
 	path = src/normalSpeed
 	url = https://github.com/hfutcgncas/normalSpeed.git
+
 [submodule "src/ClearPose"]
 	path = src/ClearPose
-	url = https://github.com/opipari/ClearPose.git
+	url = https://github.com/Domhoff859/ClearPose.git
+	branch = 30bc633
+	

@@ -34,7 +34,7 @@ RUN cd /workspace/src/apex ;\
     python3 setup.py install ;\
     cd /workspace/src/normalSpeed/normalSpeed ;\
     python3 setup.py install --user ;\
-    cd /workspace/src/Clearpose/he_ffb6d/ffb6d/models/RandLA ;\
+    cd /workspace/src/ClearPose/clearpose/he_ffb6d/ffb6d/models/RandLA ;\
     sh ./compile_op.sh
 
-WORKDIR /workspace/src/Clearpose/he_ffb6d/ffb6d
+WORKDIR /workspace/src/ClearPose/clearpose/he_ffb6d/ffb6d
